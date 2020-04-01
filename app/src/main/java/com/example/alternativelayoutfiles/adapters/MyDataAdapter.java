@@ -15,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.alternativelayoutfiles.DetailsActivity;
+import com.example.alternativelayoutfiles.ICityDataListener;
 import com.example.alternativelayoutfiles.R;
 import com.example.alternativelayoutfiles.model.CityDataItem;
 
@@ -26,10 +27,12 @@ public class MyDataAdapter extends RecyclerView.Adapter<MyDataAdapter.MyViewHold
 
     private List<CityDataItem> mDataList;
     private Context mContext;
+    private ICityDataListener mListener;
 
     public MyDataAdapter(List<CityDataItem> mDataList, Context mContext) {
         this.mDataList = mDataList;
         this.mContext = mContext;
+        mListener= (ICityDataListener) mContext;
     }
 
     @NonNull
@@ -69,11 +72,7 @@ public class MyDataAdapter extends RecyclerView.Adapter<MyDataAdapter.MyViewHold
             }
         }
 
-        holder.itemView.setOnClickListener(v -> {
-            Intent intent=new Intent(mContext, DetailsActivity.class);
-            intent.putExtra("data_key",cityDataItem);
-            mContext.startActivity(intent);
-        });
+        holder.itemView.setOnClickListener(v -> mListener.displayCityData(cityDataItem));
     }
 
     @Override

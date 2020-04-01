@@ -9,12 +9,11 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.alternativelayoutfiles.model.CityDataItem;
-import com.example.alternativelayoutfiles.sample.SampleDataProvider;
 
 import java.io.IOException;
 import java.io.InputStream;
 
-public class DetailsActivity extends AppCompatActivity {
+public class DetailsActivity extends AppCompatActivity{
 
     private TextView tvName, tvCapital, tvDesc, tvPopulation;
     private ImageView imageView;
@@ -24,11 +23,12 @@ public class DetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        CityDataItem dataItem=getIntent().getParcelableExtra("data_key");
+        CityDataItem dataItem = getIntent().getParcelableExtra("data_key");
 
-        initViews();
+        DetailFragment detailFragment = (DetailFragment)
+                getSupportFragmentManager().findFragmentById(R.id.details_fragment);
 
-        displayCityData(dataItem);
+        detailFragment.displayCityData(dataItem);
 
     }
 
@@ -42,7 +42,7 @@ public class DetailsActivity extends AppCompatActivity {
 
     }
 
-    private void displayCityData(CityDataItem item) {
+    void displayCityData(CityDataItem item) {
 
         this.tvName.setText(item.getCityName());
         this.tvPopulation.setText(String.valueOf(item.getPopulation()));
