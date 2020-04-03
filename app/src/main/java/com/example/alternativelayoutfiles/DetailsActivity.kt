@@ -9,12 +9,11 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        val cityDataItem =
-            intent.getParcelableExtra<CityDataItem>("data_key")
+        val cityDataItem = intent.getParcelableExtra<CityDataItem>("key")
 
         val fragment =
             supportFragmentManager.findFragmentById(R.id.details_fragment) as DetailFragment
-
         fragment.displayCityData(cityDataItem)
+
     }
 }

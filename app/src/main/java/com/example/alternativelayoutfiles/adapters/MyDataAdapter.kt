@@ -21,9 +21,10 @@ class MyDataAdapter(
     private val mContext: Context
 ) : RecyclerView.Adapter<MyViewHolder>() {
 
-    private val listener: ICityDataListener = mContext as ICityDataListener
+    val listener: ICityDataListener = mContext as ICityDataListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+
         val view =
             LayoutInflater.from(mContext).inflate(R.layout.list_item_layout, parent, false)
         return MyViewHolder(view)

@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -11,10 +10,10 @@
 
     <fragment
         android:id="@+id/citydata_fragment"
+        class="com.example.alternativelayoutfiles.CityDataFragment"
         android:layout_width="300dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        class="com.example.alternativelayoutfiles.CityDataFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/details_fragment_container"
@@ -22,13 +21,13 @@
 
     <fragment
         android:id="@+id/details_fragment_container"
+        class="com.example.alternativelayoutfiles.DetailFragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        class="com.example.alternativelayoutfiles.DetailFragment"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/citydata_fragment"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toRightOf="@+id/citydata_fragment" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
