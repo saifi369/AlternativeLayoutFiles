@@ -43,10 +43,10 @@ class DetailFragment : Fragment() {
     }
 
     fun displayCityData(item: CityDataItem) {
-        this.tv_name.setText(item.cityName)
-        this.tv_population.setText(item.population.toString())
-        this.tv_capital.setText(item.province)
-        this.tv_desc.setText(item.description)
+        this.tv_name.text = item.cityName
+        this.tv_population.text = item.population.toString()
+        this.tv_capital.text = item.province
+        this.tv_desc.text = item.description
         var inputStream: InputStream? = null
         try {
             inputStream = activity?.assets?.open(item.image)

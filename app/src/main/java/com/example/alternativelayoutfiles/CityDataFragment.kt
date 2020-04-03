@@ -1,10 +1,10 @@
 package com.example.alternativelayoutfiles
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.alternativelayoutfiles.adapters.MyDataAdapter
@@ -25,12 +25,12 @@ class CityDataFragment : Fragment() {
 
     private fun setUpRecyclerView(view: View) {
 
-        val recyclerView=view.findViewById<RecyclerView>(R.id.city_data_recycylerview);
+        val recyclerView = view.findViewById<RecyclerView>(R.id.city_data_recycylerview)
 
-        val adapter=MyDataAdapter(SampleDataProvider.cityDataItemList,activity)
+        val adapter = MyDataAdapter(SampleDataProvider.cityDataItemList, context!!)
 
+        recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter=adapter
-        recyclerView.layoutManager=LinearLayoutManager(activity)
 
     }
 

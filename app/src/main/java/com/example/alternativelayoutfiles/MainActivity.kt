@@ -1,17 +1,14 @@
 package com.example.alternativelayoutfiles
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.alternativelayoutfiles.adapters.MyDataAdapter
+import androidx.appcompat.app.AppCompatActivity
 import com.example.alternativelayoutfiles.model.CityDataItem
 import com.example.alternativelayoutfiles.sample.SampleDataProvider
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(),ICityDataListener{
 
@@ -38,9 +35,6 @@ class MainActivity : AppCompatActivity(),ICityDataListener{
     }
 
     override fun displayCityData(item: CityDataItem) {
-
-        Toast.makeText(this,"Called ",Toast.LENGTH_LONG)
-            .show()
 
         if(!usingFragments){
             //start new activity
