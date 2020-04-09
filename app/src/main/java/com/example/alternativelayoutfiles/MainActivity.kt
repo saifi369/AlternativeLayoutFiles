@@ -2,6 +2,7 @@ package com.example.alternativelayoutfiles
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.alternativelayoutfiles.adapters.MyDataAdapter
@@ -18,8 +19,7 @@ class MainActivity : AppCompatActivity(), ICityDataListener {
 
         setSupportActionBar(toolbar)
 
-        val viewGroup =
-            supportFragmentManager.findFragmentById(R.id.details_fragment_container)
+        val viewGroup = findViewById<ViewGroup>(R.id.details_fragment_container)
 
         if (viewGroup != null) {
             usingTablets = true
