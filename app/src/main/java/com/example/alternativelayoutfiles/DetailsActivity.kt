@@ -1,16 +1,23 @@
 package com.example.alternativelayoutfiles
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.example.alternativelayoutfiles.adapters.MyDataAdapter
+import com.example.alternativelayoutfiles.model.CityDataItem
 
 class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
 
-        Toast.makeText(this, "This is details activity", Toast.LENGTH_LONG)
-            .show()
+        val item = intent.getParcelableExtra<CityDataItem>(MyDataAdapter.DATA_KEY)
+
+        val detailFragment =
+            supportFragmentManager.findFragmentById(R.id.details_fragment) as DetailFragment
+
+        detailFragment.displayCityData(item)
+
+
 
     }
 }

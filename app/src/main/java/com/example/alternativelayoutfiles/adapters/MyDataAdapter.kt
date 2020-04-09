@@ -16,7 +16,6 @@ import com.example.alternativelayoutfiles.model.CityDataItem
 import java.io.IOException
 import java.io.InputStream
 
-
 class MyDataAdapter(
     private val mDataList: List<CityDataItem>,
     private val mContext: Context
@@ -53,6 +52,7 @@ class MyDataAdapter(
 
         holder.itemView.setOnClickListener {
             val intent = Intent(mContext, DetailsActivity::class.java)
+            intent.putExtra(DATA_KEY, cityDataItem)
             mContext.startActivity(intent)
         }
     }
@@ -69,6 +69,7 @@ class MyDataAdapter(
     }
 
     companion object {
-        const val EXTRA_KEY = "data_key"
+        const val DATA_KEY = "data_key"
     }
+
 }

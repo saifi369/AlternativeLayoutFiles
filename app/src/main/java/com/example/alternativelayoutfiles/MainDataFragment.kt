@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alternativelayoutfiles.adapters.MyDataAdapter
 import com.example.alternativelayoutfiles.sample.SampleDataProvider
 
-class CityDataFragment : Fragment() {
+class MainDataFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

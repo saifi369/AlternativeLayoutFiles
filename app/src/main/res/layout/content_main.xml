@@ -10,11 +10,11 @@
     tools:showIn="@layout/activity_main">
 
     <fragment
-        android:id="@+id/citydata_fragment"
+        android:id="@+id/main_data_fragment"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_margin="16dp"
-        class="com.example.alternativelayoutfiles.CityDataFragment"
+        class="com.example.alternativelayoutfiles.MainDataFragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
