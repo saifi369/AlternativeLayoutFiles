@@ -17,7 +17,5 @@ class DetailsActivity : AppCompatActivity() {
 
         detailFragment.displayCityData(item)
 
-
-
     }
 }

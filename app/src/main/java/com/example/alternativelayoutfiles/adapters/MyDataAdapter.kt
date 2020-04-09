@@ -1,7 +1,6 @@
 package com.example.alternativelayoutfiles.adapters
 
 import android.content.Context
-import android.content.Intent
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.alternativelayoutfiles.DetailsActivity
+import com.example.alternativelayoutfiles.ICityDataListener
 import com.example.alternativelayoutfiles.R
 import com.example.alternativelayoutfiles.adapters.MyDataAdapter.MyViewHolder
 import com.example.alternativelayoutfiles.model.CityDataItem
@@ -20,6 +19,8 @@ class MyDataAdapter(
     private val mDataList: List<CityDataItem>,
     private val mContext: Context
 ) : RecyclerView.Adapter<MyViewHolder>() {
+
+    val listener: ICityDataListener = mContext as ICityDataListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
 
@@ -51,9 +52,7 @@ class MyDataAdapter(
         }
 
         holder.itemView.setOnClickListener {
-            val intent = Intent(mContext, DetailsActivity::class.java)
-            intent.putExtra(DATA_KEY, cityDataItem)
-            mContext.startActivity(intent)
+            listener.displayCityData(cityDataItem)
         }
     }
 
