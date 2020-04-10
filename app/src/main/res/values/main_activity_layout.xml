@@ -2,5 +2,6 @@
 <resources>
 
     <bool name="using_dual_pane">false</bool>
+    <item name="main_layout" type="layout">@layout/single_pane</item>
 
 </resources>

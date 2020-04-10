@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="using_dual_pane">true</bool>
+    <item name="main_layout" type="layout">@layout/dual_pane</item>
+
+</resources>
